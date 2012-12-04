@@ -285,7 +285,8 @@ cello_notes = \relative c' {
 
 		\new Staff \with {
 			\remove "Accidental_engraver"
-				staffLineLayoutFunction = #ly:pitch-semitones
+			\remove "Clef_engraver"
+			staffLineLayoutFunction = #ly:pitch-semitones
 		}
 				% polyphonic voice, violin stems up, cello stems down
 				% also colored noteheads, stems, and accidentals
