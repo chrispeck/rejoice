@@ -9,7 +9,7 @@
 }
 
 \paper {
-	#(set-paper-size "tabloid" 'portrait)
+	#(set-paper-size "a4" 'portrait)
 	indent = #0
 	ragged-right = ##t
 	ragged-bottom = ##t
@@ -279,12 +279,17 @@ cello_notes = \relative c' {
 			\cello_notes
 		>>
 		% printing both parts on one staff
-		\new Staff << 
-			\set Staff.instrumentName = #"vl/vc"
-			\global 
-			#(set-accidental-style 'dodecaphonic)
-			\clef treble
-			<<
+
+		% using method from http://lsr.dsi.unimi.it/LSR/Snippet?id=694
+		% for simple chromatic staff
+
+		\new Staff \with {
+			\remove "Accidental_engraver"
+				staffLineLayoutFunction = #ly:pitch-semitones
+		}
+				% polyphonic voice, violin stems up, cello stems down
+				% also colored noteheads, stems, and accidentals
+		<<
 				\override NoteHead #'color = #red
 				\override Stem #'color = #red
 				\override Accidental #'color = #red
@@ -294,8 +299,14 @@ cello_notes = \relative c' {
 				\override Stem #'color = #blue
 				\override Accidental #'color = #blue
 				\cello_notes 
-			>> % polyphonic voice, violin stems up, cello stems down
-		>>
+		>> 
+
+		\new Staff << 
+			\set Staff.instrumentName = #"vl/vc"
+			\global 
+			#(set-accidental-style 'dodecaphonic)
+			\clef treble
+				>>
 
 		% vl tab
 		\new TabStaff <<
