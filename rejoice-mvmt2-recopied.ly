@@ -28,7 +28,7 @@ cello_notes = \mvmt_two-by-beat_no-clefs_vc
 	\new StaffGroup <<
 		\override Score.BarNumber #'break-visibility = #'#(#t #t #t)
 		\set Score.markFormatter = #format-mark-numbers
-
+%{
 		% original vl part
 		\new Staff << 
 			\set Staff.instrumentName = #"violin"
@@ -43,7 +43,7 @@ cello_notes = \mvmt_two-by-beat_no-clefs_vc
 			\cello_notes
 		>>
 
-	%{
+%}	
 		% printing both parts on one staff
 
 		% using method from http://lsr.dsi.unimi.it/LSR/Snippet?id=694
@@ -68,12 +68,7 @@ cello_notes = \mvmt_two-by-beat_no-clefs_vc
 				\cello_notes 
 		>> 
 
-		\new Staff << 
-			\set Staff.instrumentName = #"vl/vc"
-			#(set-accidental-style 'dodecaphonic)
-			\clef treble
-				>>
-
+%{
 		% vl tab
 		\new TabStaff <<
 			\set Staff.instrumentName = #"vl"
