@@ -1,41 +1,19 @@
-violin_notes = \relative c' {
+mvmt_two-by-beat_no-clefs_vl = \relative c' {
 
 	\time 2/4 
 	\tempo 4 = 76
 	
-	c32--^"c.s."\pp\>(b bf)\! b--\>(bf\!a\<g af)\! \times 4/5{c16--\>(b bf af a)\!} | %m1 - still need 3-3-2 beamings
-	b32--\>(bf a)\!c--\>(b bf\!af\<a\!) \times 4/5{b16--\>(bf a\!g\<af)\!} | %m2
-
-	\time 3/4 
-	\times 4/5{c16--\>(b bf af a)\!}  b32--\>(bf a)\! c--\>(b bf\!gs\<a)\!  \times 4/5{b16--(\<bf a\!g\<gs)\!} | %m3 
-	\times 4/5{b16--(\> bf a g gs)\!} \times 2/3{b8-- bf-- r} b-- r | %m4
-	bf8-- r \times 2/3{bf-- b-- r}  a'32--(\mf\< af g\!)  bf--\>( a af c, b\!) | %m5
-	bf8-- r \times 2/3{bf-- b-- r}  bf-- r | %m6
-	
-	% skipping hairpins
-	b8-- r a'32--( af g)  bf--( a af  df, c)   \times 2/3{b8-- bf-- r} | %m7
-
-	% just first note of each measure for starters
-	b=2. | %m8
-	gf'='2. | %m9
-	g'=''2. | %m10
+	%m1-10
+	c4 c | b b | \time 3/4  c b b | b b b | bf bf a' | bf,= bf bf | b a' b, | b b f' | gf=' c cs | g'='' gf, d' | 
 	
 	\mark \barNumberCheck #11  %reh1 
-	af=''2. | %m11
-	bf,='2. | %m12
-	c,='2. | %m13
+	af'='' g f | bf,=' gf ef | c=' fs g, |
 
 	\mark \barNumberCheck #14 % reh2
-	bf'='2. | %m14
-	a='2. | %m15
-	\time 2/4 a='2 | %m16
-	\time 3/4 a='2. | %m17
-	a,=2. | %m18
-
-	%maybe it will be easier to do per beat than per measure?
+	bf'=' bf a | a bf a | \time 2/4  a a | \time 2/4 a ef' f, | a,= ef' g |
 
 	\mark \barNumberCheck #19 % reh3
-	g''=''4 g4 e, | %m19
+	g'=''4 g4 e, | %m19
 	g'=''4 gf e, | %m20
 	ef4 ef' ef, | %m21
 
@@ -118,37 +96,19 @@ violin_notes = \relative c' {
 }
 
 
-cello_notes = \relative c' {
+mvmt_two-by-beat_no-clefs_vc = \relative c' {
+
+	%m1-10
+	\clef tenor  \time 2/4  c4 c | b b | \time 3/4 c b b | b b b | bf bf a' | bf,= bf bf | b a' b, | b= b f' | \clef treble  gf=' c cs | g'='' gf, d' |
 	
-	\times 2/3{\times 2/3{c16--^"c.s."\pp(b) r} \times 2/3{b--(bf a)} r8 } \times 2/3{c16--(b bf)} r8 | %m1
-	\times 2/3{\times 2/3{b16--(bf)r} \times 2/3{c--(b bf)} r8 } \times 2/3{b16--(bf a)} r8 | %m2
-	\time 3/4  \times 2/3{c16--(b bf)} r8  \times 2/3{\times 2/3{b16--(bf)r} \times 2/3{c--(b bf)} r8 } \times 2/3{b16--(bf a)} r8 | %m3
-	b8-- r  b32--\>(bf a)\!  bf--(\>a af\!)  gf(\<g\!)  \times 4/5{b16--(\>bf a\! g\< af\!)} | %m4
-	\times 4/5 {bf16--(\> b bf\!\< af a\!)}   bf32--(\> a af\!)  b--(\> bf af\!  a\< bf\!)  a'8--\mf r | % m5
-	\times 4/5 {bf,16--( a gs fs g)}   bf32--( a gs)  b--( bf a  g gs)  \times 4/5 {bf16--( a g gs a)} | % m6 - interesting to look at how hairpins ambiguously group 5s?
-
-	%no hairpins
-	\times 4/5 {b16--( bs gs a b)}  \times 2/3 {a'8-- bf-- r}  b,32--( bf a)  bf--( a gs  fs-- g) | % m7
-
-	%just first note of each measure
-	b=2. | %m8
-	\clef treble  gf'='2. | %m9
-	g'=''2. | %m10
-
 	\barNumberCheck #11   % reh1
-	\clef bass bf,,,=,2. | %m11
-	cs'='2. | %m12
-	\clef tenor   f='2. | %m13
-
+	\clef bass  bf,,=, es g | cs \clef tenor  e ds | f fs g, | 
+	
 	\barNumberCheck #14	% reh2
-	\clef treble   bf='2. | %m14
-	a='2. | %m15
-	\time 2/4 a='2 | %m16
-	\time 3/4 a='2. | %m17
-	\clef tenor   gs,=2. | %m18
+	\clef treble  bf'=' bf a | a bf a | \time 2/4  a a | \time 3/4  a d \clef tenor  fs, | gs,=  d' gs |
 
 	\barNumberCheck #19 % reh 3
-	\clef bass   c,=4 c c' | %m19
+	\clef bass   c,,=4 c c' | %m19
 	c, c   \clef tenor   c' | %m20
 	d d' d, | %m21
 
@@ -223,6 +183,4 @@ cello_notes = \relative c' {
 
 	%\barNumberCheck #91 % reh 23
 	%ef=8--(d c cs ef cs4) d1~d d4 \clef treble  a''=''~a8. \clef tenor d,,='16( cs4--) \clef treble cs''=''2 \clef tenor cs8(c4.~c1) \clef treble e'''=''' \bar ".|"   
-
-	
 }

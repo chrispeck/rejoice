@@ -1,9 +1,12 @@
 \version "2.16.1"
 \language "english"
 
-\inlucde "string_tunings.ly"
+\include "string_tunings.ly"
 
 \include "mvmt2-by-beat_no-clefs.ly"
+
+violin_notes = \mvmt_two-by-beat_no-clefs_vl
+cello_notes = \mvmt_two-by-beat_no-clefs_vc
 
 %showLastLength = R4*60 % R4*n -> render last n beats only
 
@@ -39,6 +42,8 @@
 			\clef tenor
 			\cello_notes
 		>>
+
+	%{
 		% printing both parts on one staff
 
 		% using method from http://lsr.dsi.unimi.it/LSR/Snippet?id=694
@@ -82,7 +87,6 @@
 			\set TabStaff.stringTunings = #cello_tuning
 			\cello_notes
 		>>
-%{
 %}
 	>>
 	\layout {
